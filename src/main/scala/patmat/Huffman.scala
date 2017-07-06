@@ -74,7 +74,7 @@ object Huffman {
     def counter(c: Char, acc: List[(Char, Int)]): List[(Char, Int)] = {
       acc match {
         case List() => (c, 1) :: acc // add '1'
-        case (`c`, count) :: xs => (c, count + 1) :: xs // head has 'c' with a count -> increment it
+        case x :: xs if x._1 == c => (c, x._2 + 1) :: xs // head has 'c' with a count -> increment it
         case x :: xs => x :: counter(c, xs) // does not contain c, loop again.
       }
     }
