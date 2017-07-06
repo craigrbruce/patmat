@@ -51,4 +51,14 @@ class HuffmanSuite extends FunSuite {
     }
   }
 
+  test("times generates correct list") {
+    val actual = times(List('a', 'a', 'b', 'c', 'd', 'd', 'e'))
+    assert(actual.contains(('a', 2)))
+    assert(actual.contains(('b', 1)))
+    assert(actual.contains(('c', 1)))
+    assert(actual.contains(('d', 2)))
+    assert(actual.contains(('e', 1)))
+
+  }
+
 }
