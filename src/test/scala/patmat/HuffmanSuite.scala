@@ -61,4 +61,10 @@ class HuffmanSuite extends FunSuite {
 
   }
 
+  test("singleton") {
+    new TestTrees {
+      assert(singleton(List(t1))).equals(true)
+    }
+  }
+
 }
